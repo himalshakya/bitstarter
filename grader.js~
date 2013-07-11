@@ -78,9 +78,9 @@ var clone = function(fn) {
 };
 
 var fileOrUrl = function(fileVal, urlVal){
-//    console.log("File or url");
-//    console.log(fileVal);
-//    console.log(urlVal);
+    console.log("File or url");
+    console.log(fileVal);
+    console.log(urlVal);
     if(fileVal){
         return fileVal;
     }else if(urlVal){
@@ -97,7 +97,7 @@ var checkUrlFile = function(urllink, checksfile){
         fs.writeFile("MyFile", result
         , function(err){
             if(err) throw err;
-  //          console.log("No error");
+            console.log("No error");
             $ = cheerioHtmlFile("MyFile");
         var temp = checkHtmlContent($, checksfile);
         var outJson = JSON.stringify(temp, null, 4);
@@ -126,7 +126,7 @@ if(require.main == module) {
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
     } else if(program.url){
-    //    console.log("processing for URL");
+        console.log("processing for URL");
     //    var checkJson =  
             checkUrlFile(program.url, program.checks);
     } else {
